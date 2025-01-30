@@ -3,7 +3,7 @@
 ##TODO
 - [x] deploye (vecel)
 - [x] scfold with basic data mock ()
-- [ ] setup db (vecel /postgresql)
+- [x] setup db (vecel /postgresql)
 - [ ] attach db to UI 
 - [ ] add authentication (w/ clerk)
 - [ ] add upload image 
