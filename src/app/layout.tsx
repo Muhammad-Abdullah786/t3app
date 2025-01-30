@@ -9,12 +9,39 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+function TopNav() {
+  // show gallery btn and sign and sign up
+  return (
+    <nav
+      className={`flex items-center justify-between border-b-2 border-gray-200 px-4 py-2`}
+    >
+      <div>
+        <h1 className={`text-3xl font-bold text-white`}>T3 App</h1>
+      </div>
+      <div>
+        <button
+          className={`rounded-md px-4 py-2 text-sm text-white hover:bg-blue-600`}
+        >
+          Sign In
+        </button>
+        <button
+          className={`rounded-md px-4 py-2 text-sm text-white hover:bg-gray-600`}
+        >
+          Sign Up
+        </button>
+      </div>
+    </nav>
+  );
+}
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+      <body className={`font-sans ${GeistSans.variable} flex flex-col gap-4`}>
+        <TopNav />
+        {children}
+      </body>
     </html>
   );
 }

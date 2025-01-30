@@ -1,8 +1,8 @@
 # Full Stack App using t3app
 
 ##TODO
-- [ ] deploye (vecel)
-- [ ] scfold with basic data mock ()
+- [x] deploye (vecel)
+- [x] scfold with basic data mock ()
 - [ ] setup db (vecel /postgresql)
 - [ ] attach db to UI 
 - [ ] add authentication (w/ clerk)
