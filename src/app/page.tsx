@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const mockData = [
     "https://images.pexels.com/photos/30320386/pexels-photo-30320386/free-photo-of-vintage-bicycle-leaning-against-old-wall-in-turkiye.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
