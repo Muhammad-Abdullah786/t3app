@@ -4,7 +4,7 @@
 - [x] deploye (vecel)
 - [x] scfold with basic data mock ()
 - [x] setup db (vecel /postgresql)
-- [✔ ] attach db to UI 
+- [x] attach db to UI 
 - [ ] add authentication (w/ clerk)
 - [ ] add upload image 
 - [ ] Error managment (w/ sentry)
