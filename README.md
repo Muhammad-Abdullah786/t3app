@@ -5,7 +5,7 @@
 - [x] scfold with basic data mock ()
 - [x] setup db (vecel /postgresql)
 - [x] attach db to UI 
-- [ ] add authentication (w/ clerk)
+- [x] add authentication (w/ clerk)
 - [ ] add upload image 
 - [ ] Error managment (w/ sentry)
 - [ ] Routing of images page (parallel routing)
