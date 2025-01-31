@@ -6,7 +6,7 @@
 - [x] setup db (vecel /postgresql)
 - [x] attach db to UI 
 - [x] add authentication (w/ clerk)
-- [ ] add upload image 
+- [x] add upload image 
 - [ ] Error managment (w/ sentry)
 - [ ] Routing of images page (parallel routing)
 - [ ] Delete btn (w/ server actions )
