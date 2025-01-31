@@ -1,16 +1,16 @@
-import Image from "next/image";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  //?the default order will be oldest to newest we will change that
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  });
+  async function showImages() {
+    //?the default order will be oldest to newest we will change that
+    const images = await db.query.images.findMany({
+      orderBy: (model, { desc }) => desc(model.id),
+    });
 
-  return (
-    <main>
+    return (
       <div className="flex flex-wrap">
         {[
           ...images,
@@ -27,7 +27,7 @@ export default async function HomePage() {
               key={image.id + "-" + index}
               className="w-48 p-2 sm:w-32 md:w-64"
             >
-              <Image
+              <img
                 src={image.url}
                 width={200}
                 height={200}
@@ -39,7 +39,18 @@ export default async function HomePage() {
           );
         })}
       </div>
-      hello workd!!
+    );
+  }
+
+  return (
+    <main>
+      <SignedOut>
+        <div className="h-full w-full text-3xl">
+          <p>You are not signed in.</p>
+          <p>Please sign in to access your images.</p>
+        </div>
+      </SignedOut>
+      <SignedIn>{showImages()}</SignedIn>
     </main>
   );
 }
