@@ -22,27 +22,21 @@
 //   );
 // }
 
-import Image from "next/image";
-import { getImage } from "~/server/queries";
 import { Modal } from "./modal";
+import FullPageImageView from "~/component/full-image-reusabel";
 
-export default async function PhotoModal({
-  params,
-}: {
-  params: { id: string };
-}) {
-  const photoId = params.id; // Access params.id properly
+export default function PhotoModal({ params }: { params: { id: string } }) {
+  const photoId = params.id;
 
   const idNumber = Number(photoId);
   if (Number.isNaN(idNumber))
     throw new Error(`Invalid ID! It's not a number! 🤬`);
 
-  const image = await getImage(idNumber);
-
   return (
     <div>
       <Modal>
-        <Image src={image.url} width={700} height={600} alt={image.name} />
+        <FullPageImageView photoId={idNumber} />
+        {/* <Image src={image.url} width={700} height={600} alt={image.name} /> */}
       </Modal>
     </div>
   );
