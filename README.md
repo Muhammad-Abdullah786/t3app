@@ -9,7 +9,7 @@
 - [x] add upload image 
 - [x] taint for server only
 - [x] Error managment (w/ sentry)
-- [ ] Routing of images page (parallel routing)
+- [x] Routing of images page (parallel routing)
 - [ ] Delete btn (w/ server actions )
 - [ ] Analytics (w/ post hog)
 - [ ] Rate limiting (w/upstash)
