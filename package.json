@@ -22,7 +22,7 @@
   "dependencies": {
     "@clerk/nextjs": "^6.10.4",
     "@neondatabase/serverless": "^0.10.4",
-    "@sentry/nextjs": "^8",
+    "@sentry/nextjs": "^8.53.0",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@uploadthing/react": "^7.1.5",
     "dotenv": "^16.4.7",
