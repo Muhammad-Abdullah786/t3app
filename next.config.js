@@ -14,9 +14,12 @@ const config = {
     eslint: {
         ignoreDuringBuilds: true,
     },
-    images: {
-        domains: ["images.pexels.com"],
-    },
+    // images: {
+    //     domains: ["images.pexels.com", "utfs.io"],
+    // },
+    images:{
+        remotePatterns:[{hostname:"utfs.io"}]
+    }
 };
 
 export default config;
