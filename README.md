@@ -10,6 +10,7 @@
 - [x] taint for server only
 - [x] Error managment (w/ sentry)
 - [x] Routing of images page (parallel routing)
+- [x] add shadui toast
 - [ ] Delete btn (w/ server actions )
 - [ ] Analytics (w/ post hog)
 - [ ] Rate limiting (w/upstash)

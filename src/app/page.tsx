@@ -14,7 +14,7 @@ export default async function HomePage() {
         {images.map((image) => {
           return (
             <div key={image.id} className="w-48 p-2 sm:w-32 md:w-64">
-              <Link href={`/img/40`}>
+              <Link href={`/img/${image.id}`}>
                 <Image
                   src={image.url}
                   width={500}

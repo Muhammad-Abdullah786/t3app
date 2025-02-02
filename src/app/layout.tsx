@@ -1,5 +1,7 @@
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
+import { Toaster } from "../components/ui/sonner"
+
 
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -46,6 +48,7 @@ export default function RootLayout({
             {modal}
           </div>
           <div id="modal-root" />
+          <Toaster/>
         </body>
       </html>
     </ClerkProvider>
