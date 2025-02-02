@@ -44,9 +44,6 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
-      react-image-zoom:
-        specifier: ^1.3.1
-        version: 1.3.1
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -2280,10 +2277,6 @@ packages:
     resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
     engines: {node: '>=14'}
 
-  js-image-zoom@0.7.0:
-    resolution: {integrity: sha512-csvn2FmRLjVz5O9AtXGRPKy0Khfcf5n2Vuyg1NyOVylcjzJ6IKN60JmZ/d5rVQvMya9V6tqAaCqj/c20PlUYpQ==}
-    engines: {node: '>=0.8.0'}
-
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -2789,9 +2782,6 @@ packages:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
       react: ^18.3.1
-
-  react-image-zoom@1.3.1:
-    resolution: {integrity: sha512-RSw64hMnrnezokenByljfIWVJX5vJQiCirMBJxVqQ3rbQFXk0KGKsoMzdr7cc0/YYStrag3xK8UQZH8KdlTbYQ==}
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -5703,8 +5693,6 @@ snapshots:
 
   js-cookie@3.0.5: {}
 
-  js-image-zoom@0.7.0: {}
-
   js-tokens@4.0.0: {}
 
   js-yaml@4.1.0:
@@ -6106,11 +6094,6 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
-
-  react-image-zoom@1.3.1:
-    dependencies:
-      js-image-zoom: 0.7.0
-      prop-types: 15.8.1
 
   react-is@16.13.1: {}
 
