@@ -14,7 +14,7 @@ export default async function HomePage() {
         {images.map((image) => {
           return (
             <div key={image.id} className="w-48 p-2 sm:w-32 md:w-64">
-              <Link href={`/img/${image.id}`}>
+              <Link href={`/img/40`}>
                 <Image
                   src={image.url}
                   width={500}
@@ -22,8 +22,8 @@ export default async function HomePage() {
                   alt={image.name}
                   className="h-64 w-full object-cover"
                 />
+                <h2 className="text-white">{image.name}</h2>
               </Link>
-              <h2 className="text-white">{image.name}</h2>
             </div>
           );
         })}
