@@ -2,7 +2,8 @@ import { getImage } from "~/server/queries";
 // import ImageZoom from "./zoom";
 import Image from "next/image";
 import { clerkClient } from "@clerk/nextjs/server";
-
+import { Button } from "../components/ui/button";
+import { deleteImage } from "~/server/queries";
 export default async function FullPageImageView(props: { photoId: number }) {
   const image = await getImage(props.photoId);
   const user = await clerkClient();
@@ -41,6 +42,14 @@ export default async function FullPageImageView(props: { photoId: number }) {
               {new Date(image.createdAt).toLocaleDateString()}
             </span>
           </p>
+          <form
+            action={async () => {
+              "use server";
+              await deleteImage(props.photoId);
+            }}
+          >
+            <Button variant="destructive">Delete</Button>
+          </form>
         </div>
       </div>
     </div>

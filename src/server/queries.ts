@@ -1,7 +1,10 @@
 import "server-only";
 import { db } from "./db";
 import { auth } from "@clerk/nextjs/server";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
+import { images } from "./db/schema";
+import { redirect } from "next/navigation";
+import serverSideAnalytics from "./analytics";
 
 export async function getMyImages() {
   const user = await auth();
@@ -18,7 +21,7 @@ export async function getMyImages() {
 
 export async function getImage(id: number) {
   const user = await auth();
-  
+
   if (!user.userId) throw new Error("user not exist");
   const image = await db.query.images.findFirst({
     // ?find first will only give one image this time
@@ -31,4 +34,23 @@ export async function getImage(id: number) {
     throw new Error("you are not suppose to be here!! 😥  ");
 
   return image;
+}
+
+export async function deleteImage(id: number) {
+  const user = await auth();
+
+  if (!user.userId) throw new Error("user not exist");
+  await db
+    .delete(images)
+    .where(and(eq(images.id, id), eq(images.userId, user.userId)));
+
+  serverSideAnalytics().capture({
+    distinctId: user.userId,
+    event: 'deleting image',
+    properties: {
+      imageId: id,
+    },
+  })
+
+    redirect("/");
 }
