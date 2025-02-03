@@ -5,6 +5,7 @@ import { and, eq } from "drizzle-orm";
 import { images } from "./db/schema";
 import { redirect } from "next/navigation";
 import serverSideAnalytics from "./analytics";
+import { revalidatePath } from "next/cache";
 
 export async function getMyImages() {
   const user = await auth();
@@ -46,11 +47,11 @@ export async function deleteImage(id: number) {
 
   serverSideAnalytics().capture({
     distinctId: user.userId,
-    event: 'deleting image',
+    event: "deleting image",
     properties: {
       imageId: id,
     },
-  })
-
-    redirect("/");
+  });
+  revalidatePath("/");
+  redirect("/");
 }
