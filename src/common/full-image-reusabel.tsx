@@ -4,6 +4,7 @@ import Image from "next/image";
 import { clerkClient } from "@clerk/nextjs/server";
 import { Button } from "../components/ui/button";
 import { deleteImage } from "~/server/queries";
+import { redirect } from "next/navigation";
 export default async function FullPageImageView(props: { photoId: number }) {
   const image = await getImage(props.photoId);
   const user = await clerkClient();
@@ -38,14 +39,14 @@ export default async function FullPageImageView(props: { photoId: number }) {
               Created On:{" "}
             </span>
             <span className="flex text-orange-400">
-              {" "}
-              {new Date(image.createdAt).toLocaleDateString()}
+              {image.createdAt.toLocaleDateString()}
             </span>
           </p>
           <form
             action={async () => {
               "use server";
               await deleteImage(props.photoId);
+              redirect("/");
             }}
           >
             <Button type="submit" variant="destructive">
