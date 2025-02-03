@@ -3,7 +3,7 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { getMyImages } from "~/server/queries";
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   async function showImages() {
