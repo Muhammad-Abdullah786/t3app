@@ -23,7 +23,7 @@
 // }
 
 import { Modal } from "./modal";
-import FullPageImageView from "~/component/full-image-reusabel";
+import FullPageImageView from "~/common/full-image-reusabel";
 
 export default function PhotoModal({ params }: { params: { id: string } }) {
   const photoId = params.id;

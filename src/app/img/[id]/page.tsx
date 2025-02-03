@@ -22,7 +22,7 @@
 //   );
 // }
 
-import FullPageImageView from "~/component/full-image-reusabel";
+import FullPageImageView from "~/common/full-image-reusabel";
 
 export default function PhotoPage({ params }: { params: { id: string } }) {
   const photoId = params.id;
@@ -32,7 +32,7 @@ export default function PhotoPage({ params }: { params: { id: string } }) {
     throw new Error(`Invalid ID! It's not a number! 🤬`);
 
   return (
-    <div className="flex items-center justify-center align-middle ">
+    <div className="flex items-center justify-center align-middle">
       <FullPageImageView photoId={idNumber} />
       {/* <Image src={image.url} width={700} height={600} alt={image.name} /> */}
     </div>

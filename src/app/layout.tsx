@@ -30,7 +30,7 @@ export default function RootLayout({
   modal: React.ReactNode;
 }) {
   return (
-    <ClerkProvider dynamic>
+    <ClerkProvider >
       <CSPostHogProvider>
         <html lang="en">
           <NextSSRPlugin

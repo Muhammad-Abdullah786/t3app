@@ -48,7 +48,9 @@ export default async function FullPageImageView(props: { photoId: number }) {
               await deleteImage(props.photoId);
             }}
           >
-            <Button variant="destructive">Delete</Button>
+            <Button type="submit" variant="destructive">
+              Delete
+            </Button>
           </form>
         </div>
       </div>
