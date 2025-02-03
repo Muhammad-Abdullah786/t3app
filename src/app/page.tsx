@@ -32,7 +32,7 @@ export default async function HomePage() {
   }
 
   return (
-    <main>
+    <main >
       <SignedOut>
         <div className="h-full w-full text-3xl">
           <p>You are not signed in.</p>
