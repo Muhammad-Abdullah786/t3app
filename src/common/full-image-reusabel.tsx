@@ -4,8 +4,7 @@ import Image from "next/image";
 import { clerkClient } from "@clerk/nextjs/server";
 import { Button } from "../components/ui/button";
 import { deleteImage } from "~/server/queries";
-import { redirect } from "next/navigation";
-import { revalidatePath } from "next/cache";
+import { toast } from "sonner";
 
 export default async function FullPageImageView(props: { photoId: number }) {
   const image = await getImage(props.photoId);
@@ -48,8 +47,8 @@ export default async function FullPageImageView(props: { photoId: number }) {
             action={async () => {
               "use server";
               await deleteImage(props.photoId);
-              revalidatePath('/')
-              redirect('/')
+              console.log("working");
+              toast.dismiss("Image deleted successfully");
             }}
           >
             <Button type="submit" variant="destructive">
