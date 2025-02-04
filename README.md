@@ -13,4 +13,4 @@
 - [x] add shadui toast
 - [x] Delete btn (w/ server actions )
 - [x] Analytics (w/ post hog)
-- [ ] Rate limiting (w/upstash)
+- [x] Rate limiting (w/upstash)
