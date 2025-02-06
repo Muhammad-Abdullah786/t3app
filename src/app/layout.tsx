@@ -5,16 +5,20 @@ import { CSPostHogProvider } from "./_analytics/provider";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
+
 import { TopNav } from "./_component/topNav";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 
-const inter = Inter({
+
+
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-sans",
-});
+  weight: ["400", "500", "600", "700"], 
+  variable: "--font-poppins",
+})
 
 export const metadata = {
   title: "My  Gallery",
@@ -42,7 +46,7 @@ export default function RootLayout({
              */
             routerConfig={extractRouterConfig(ourFileRouter)}
           />
-          <body className={`font-sans ${inter.variable} dark`}>
+          <body className={`font-sans ${poppins.variable} dark`}>
             <div className="grid h-screen grid-rows-[auto,1fr]">
               <TopNav />
               <main className="overflow-y-scroll">{children}</main>

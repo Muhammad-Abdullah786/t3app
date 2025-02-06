@@ -2,18 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-* {
-  @apply bg-black;
-  @apply text-white !important;
-
-
+body {
+  @apply bg-black text-white;
 }
 
-dialog {
-  max-width: 100vh;
-  max-height: 100vh;
+* {
+  @apply border-border;
 }
 
 @layer base {
@@ -30,8 +24,6 @@ dialog {
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: hsl(240, 18%, 85%);
-    --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
@@ -43,7 +35,6 @@ dialog {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-
   }
 
   .dark {
@@ -59,10 +50,6 @@ dialog {
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    /* --accent: 240 3.7% 15.9%; */
-    --accent: hsl(240, 18%, 85%);
-    ;
-    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
@@ -73,23 +60,11 @@ dialog {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-
-  }
-
-}
-
-
-@layer base {
-  * {
-    @apply border-border;
-
   }
 
   body {
     @apply bg-background text-foreground;
-
   }
-
 }
 
 .spinner_ajPY {
@@ -102,3 +77,17 @@ dialog {
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

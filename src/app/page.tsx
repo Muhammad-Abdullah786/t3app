@@ -2,19 +2,20 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import { getMyImages } from "~/server/queries";
+import { Button } from "~/components/ui/button";
+import { getAllImages } from "~/server/queries";
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   async function showImages() {
-    const images = await getMyImages();
+    const allImages = await getAllImages()
 
     return (
       <div className="flex flex-wrap">
-        {images.map((image) => {
+        {allImages.map((image) => {
           return (
             <div key={image.id} className="w-48 p-2 sm:w-32 md:w-64">
-              <Link href={`/img/${image.id}`} as={`/img/${image.id}`}>
+              <Link href={`/img/${image.id}`}>
                 <Image
                   src={image.url}
                   width={500}
@@ -38,6 +39,7 @@ export default async function HomePage() {
           <p>You are not signed in.</p>
           <p>Please sign in to access your images.</p>
         </div>
+        <Button className="flex p-4 text-2xl text-center  items-center justify-center text-white  " variant={'secondary'}>View As Guest</Button>
       </SignedOut>
       <SignedIn>{showImages()}</SignedIn>
     </main>
